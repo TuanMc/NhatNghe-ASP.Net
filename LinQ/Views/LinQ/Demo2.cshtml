@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Demo2";
+}
+
+<h2>Demo2</h2>
+<table>
+    @foreach (var s in ViewBag.items)
+    {
+        <tr>
+            <td>@s.Value</td>
+            <td>@s.Rate</td>
+        </tr>
+    }
+</table>
+
+@*<table>
+    @foreach (var s in ViewBag.items3)
+    {
+        <tr>
+            <td>@s.Nhom</td>
+            <td>@s.Tong</td>
+            <td>@s.SoLuong</td>
+            <td>@s.SoNN</td>
+            <td>@s.SoLN</td>
+            <td>@s.SoTB</td>
+            
+        </tr>
+    }
+</table>*@

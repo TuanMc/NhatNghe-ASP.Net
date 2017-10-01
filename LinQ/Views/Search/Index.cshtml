@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<fieldset>
+    <legend>Search</legend>
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("min", null, new { placeholder="Min Value" })
+        @Html.TextBox("max", null, new { placeholder="Max Value" })
+        @Html.TextBox("keyword", null, new { placeholder="Keyword" })
+        <button class="btn btn-default">Search</button>
+
+    }
+</fieldset>
+
+<fieldset>
+    <legend>Results</legend>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>UnitPrice</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var i in ViewBag.Items)
+            {
+                <tr>
+                    <td>@i.Name</td>
+                    <td>@i.UnitPrice</td>
+                    <td>@i.Category.NameVN (@i.Category.Name)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</fieldset>

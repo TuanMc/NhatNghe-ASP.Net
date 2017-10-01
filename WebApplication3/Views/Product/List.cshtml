@@ -1,0 +1,37 @@
+﻿@model  WebApplication3.Models.Category
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>@Model.NameVN.ToUpper()</h2>
+@foreach (var p in Model.Products)
+{
+    <div class="col-sm-4 nn-prod">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">
+                @p.Name
+            </div>
+            <div class="panel panel-body">
+                <a href="@Url.Action("Detail", new { Id=p.Id})">
+                    <img src="~/Images/products/@p.Image" />
+                </a>
+            </div>
+            <div class="panel panel-footer">
+                @p.UnitPrice
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    .nn-prod {
+        text-align: center;
+        font-size: smaller;
+    }
+
+        .nn-prod .panel-body img {
+            height: 150px;
+            max-width: 95%;
+        }
+</style>

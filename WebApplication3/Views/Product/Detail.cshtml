@@ -1,0 +1,21 @@
+﻿
+@model WebApplication3.Models.Product
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<img src="~/Images/products/@Model.Image" />
+
+<ul>
+    <li>Name: @Model.Name</li>
+    <li>Price: @Model.UnitPrice</li>
+    <li>Date: @Model.ProductDate</li>
+    <li>NameVN: @Model.Category.NameVN</li>
+</ul>
+
+<div>
+    @Model.Description
+</div>

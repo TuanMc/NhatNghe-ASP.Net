@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .nn-rand img {
+        height: 80px;
+        max-width: 95%;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="row">
+        @foreach (var i in ViewBag.Products)
+        {
+            <div class="col-sm-3 nn-rand">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <img src="~/Images/products/@i.Image" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+    @foreach (EFCodeFirst.Models.Category c in ViewBag.Categories)
+    {
+        var products = c.Products.OrderBy(x => Guid.NewGuid()).Take(5).ToList();
+        <div class="col-md-3">
+            <h2>@c.NameVN</h2>
+            <ul>
+                @foreach(var p in products)
+                {
+                    <li>@p.Name</li>
+                }
+            </ul>
+        </div>
+    }
+</div>

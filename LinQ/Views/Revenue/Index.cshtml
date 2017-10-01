@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nhom</th>
+            <th>Doanh So</th>
+            <th>So Luong</th>
+            <th>Gia Thap Nhat</th>
+            <th>Gia Cao Nhat</th>
+            <th>Gia Trung Binh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Nhom</td>
+                <td>@r.DoanhSo</td>
+                <td>@r.TongSoHHDB</td>
+                <td>@r.GiaNN </td>
+                <td>@r.GiaLN </td>
+                <td>@r.GiaTB </td>
+            </tr>
+        }
+    </tbody>
+</table>
